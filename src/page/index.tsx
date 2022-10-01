@@ -6,7 +6,7 @@ import {useGlobalUI} from '../contexts/globalui';
 interface IndexProps {}
 
 const Index: React.FC<IndexProps> = ({}) => {
-  const {openSnackBarSuccess} = useGlobalUI();
+  const {openSnackBarSuccess, openSnackBarError} = useGlobalUI();
 
   return (
     <Box>
