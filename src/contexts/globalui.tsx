@@ -1,5 +1,5 @@
 import { Alert, Box, CloseIcon, IconButton } from 'native-base'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Animated } from 'react-native'
 import { Typography } from '../components/common/Typography'
 import { Color } from '../lib/nativebase/theme'
@@ -24,6 +24,7 @@ interface GlobalUIProviderProps {
 
 const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
   const [isOpenSnackbar, setIsOpenSnackbar] = React.useState(false)
+  const [timer, setTimer] = useState<any>()
   const [snackTitle, setSnackTitle] = React.useState('title')
   const [snackSubtitle, setSnackSubtitle] = React.useState<string>()
   const [snackSeverity, setSnackSeverity] = React.useState<'success' | 'error' | 'info' | 'warning'>('success')
@@ -36,12 +37,20 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
         duration: 200,
         useNativeDriver: true,
       }).start()
+      const _timer = setTimeout(() => {
+        setIsOpenSnackbar(false)
+      }, 3000)
+      setTimer(_timer)
     } else {
       Animated.timing(snackAnimation, {
         toValue: 0,
         duration: 200,
         useNativeDriver: true,
       }).start()
+    }
+
+    return () => {
+      clearTimeout(timer)
     }
   }, [isOpenSnackbar])
 
