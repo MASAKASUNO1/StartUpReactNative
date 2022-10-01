@@ -1,5 +1,6 @@
 import { Alert, Box, CloseIcon, IconButton } from 'native-base'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { Animated } from 'react-native'
 import { Typography } from '../components/common/Typography'
 import { Color } from '../lib/nativebase/theme'
 
@@ -26,6 +27,23 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
   const [snackTitle, setSnackTitle] = React.useState('title')
   const [snackSubtitle, setSnackSubtitle] = React.useState<string>()
   const [snackSeverity, setSnackSeverity] = React.useState<'success' | 'error' | 'info' | 'warning'>('success')
+  const snackAnimation = useRef(new Animated.Value(0)).current
+
+  useEffect(() => {
+    if (isOpenSnackbar) {
+      Animated.timing(snackAnimation, {
+        toValue: 1,
+        duration: 200,
+        useNativeDriver: true,
+      }).start()
+    } else {
+      Animated.timing(snackAnimation, {
+        toValue: 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start()
+    }
+  }, [isOpenSnackbar])
 
   const openSnackBarSuccess = (title: string, subtitle: string) => {
     setSnackTitle(title)
@@ -69,27 +87,33 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
         closeSnackBar,
       }}>
       {children}
-      {isOpenSnackbar && (
+      <Animated.View
+        style={{
+          opacity: snackAnimation,
+        }}>
         <Alert
           status={snackSeverity}
           colorScheme={snackSeverity}
           style={{ position: 'absolute', bottom: 120, left: 16, right: 16 }}>
           <Box width={'100%'} display={'flex'} flexDir={'column'} alignItems={'center'} justifyContent={'center'}>
             <Box width={'100%'} display={'flex'} flexDir={'row'} alignItems={'center'} justifyContent={'flex-start'}>
-              <Alert.Icon size={5} />
+              <Alert.Icon color={Color['color-success-500']} size={5} />
               <Box mr={2} />
               <Typography style={{ display: 'flex', flex: 1 }} variant="h5">
                 {snackTitle}
               </Typography>
               <Box mr={2} />
               <IconButton
+                onPress={() => {
+                  closeSnackBar()
+                }}
                 variant="unstyled"
                 _focus={{
                   borderWidth: 0,
                 }}
                 icon={<CloseIcon size="3" />}
                 _icon={{
-                  color: 'coolGray.600',
+                  color: 'muted.900',
                 }}
               />
             </Box>
@@ -102,7 +126,7 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
             )}
           </Box>
         </Alert>
-      )}
+      </Animated.View>
     </GlobalUIContext.Provider>
   )
 }
