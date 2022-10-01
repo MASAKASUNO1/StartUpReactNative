@@ -1,4 +1,4 @@
-import {Text} from 'native-base';
-const Typography = Text;
+import { Text } from 'native-base'
+const Typography = Text
 
-export {Typography};
+export { Typography }

@@ -1,10 +1,10 @@
-import {NativeBaseProvider} from 'native-base';
-import React from 'react';
-import {SafeAreaView} from 'react-native';
-import {Typography} from './src/components/common/Typography';
-import {GlobalUIProvider} from './src/contexts/globalui';
-import {AppTheme} from './src/lib/nativebase/theme';
-import {Index} from './src/page';
+import { NativeBaseProvider } from 'native-base'
+import React from 'react'
+import { SafeAreaView } from 'react-native'
+import { Typography } from './src/components/common/Typography'
+import { GlobalUIProvider } from './src/contexts/globalui'
+import { AppTheme } from './src/lib/nativebase/theme'
+import { Index } from './src/page'
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
         </SafeAreaView>
       </GlobalUIProvider>
     </NativeBaseProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
