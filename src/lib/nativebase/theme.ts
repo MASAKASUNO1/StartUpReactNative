@@ -1,76 +1,76 @@
-import {extendTheme} from 'native-base';
+import { extendTheme } from 'native-base'
 
 interface UIColor {
-  'color-primary-100': string;
-  'color-primary-200': string;
-  'color-primary-300': string;
-  'color-primary-400': string;
-  'color-primary-500': string;
-  'color-primary-600': string;
-  'color-primary-700': string;
-  'color-primary-800': string;
-  'color-primary-900': string;
+  'color-primary-100': string
+  'color-primary-200': string
+  'color-primary-300': string
+  'color-primary-400': string
+  'color-primary-500': string
+  'color-primary-600': string
+  'color-primary-700': string
+  'color-primary-800': string
+  'color-primary-900': string
 
-  'color-warning-100': string;
-  'color-warning-200': string;
-  'color-warning-300': string;
-  'color-warning-400': string;
-  'color-warning-500': string;
-  'color-warning-600': string;
-  'color-warning-700': string;
-  'color-warning-800': string;
-  'color-warning-900': string;
+  'color-warning-100': string
+  'color-warning-200': string
+  'color-warning-300': string
+  'color-warning-400': string
+  'color-warning-500': string
+  'color-warning-600': string
+  'color-warning-700': string
+  'color-warning-800': string
+  'color-warning-900': string
 
-  'color-success-100': string;
-  'color-success-200': string;
-  'color-success-300': string;
-  'color-success-400': string;
-  'color-success-500': string;
-  'color-success-600': string;
-  'color-success-700': string;
-  'color-success-800': string;
-  'color-success-900': string;
+  'color-success-100': string
+  'color-success-200': string
+  'color-success-300': string
+  'color-success-400': string
+  'color-success-500': string
+  'color-success-600': string
+  'color-success-700': string
+  'color-success-800': string
+  'color-success-900': string
 
-  'color-info-100': string;
-  'color-info-200': string;
-  'color-info-300': string;
-  'color-info-400': string;
-  'color-info-500': string;
-  'color-info-600': string;
-  'color-info-700': string;
-  'color-info-800': string;
-  'color-info-900': string;
+  'color-info-100': string
+  'color-info-200': string
+  'color-info-300': string
+  'color-info-400': string
+  'color-info-500': string
+  'color-info-600': string
+  'color-info-700': string
+  'color-info-800': string
+  'color-info-900': string
 
-  'color-danger-100': string;
-  'color-danger-200': string;
-  'color-danger-300': string;
-  'color-danger-400': string;
-  'color-danger-500': string;
-  'color-danger-600': string;
-  'color-danger-700': string;
-  'color-danger-800': string;
-  'color-danger-900': string;
+  'color-danger-100': string
+  'color-danger-200': string
+  'color-danger-300': string
+  'color-danger-400': string
+  'color-danger-500': string
+  'color-danger-600': string
+  'color-danger-700': string
+  'color-danger-800': string
+  'color-danger-900': string
 
-  'color-basic-100': string;
-  'color-basic-200': string;
-  'color-basic-300': string;
-  'color-basic-400': string;
-  'color-basic-500': string;
-  'color-basic-600': string;
-  'color-basic-700': string;
-  'color-basic-800': string;
-  'color-basic-900': string;
+  'color-basic-100': string
+  'color-basic-200': string
+  'color-basic-300': string
+  'color-basic-400': string
+  'color-basic-500': string
+  'color-basic-600': string
+  'color-basic-700': string
+  'color-basic-800': string
+  'color-basic-900': string
 
-  'color-background-100': string;
-  'color-background-200': string;
-  'color-background-300': string;
-  'color-background-400': string;
-  'color-border-100': string;
+  'color-background-100': string
+  'color-background-200': string
+  'color-background-300': string
+  'color-background-400': string
+  'color-border-100': string
 
-  'color-teal-500': string;
-  'color-pink-500': string;
-  'color-purple-500': string;
-  'color-yellow-500': string;
+  'color-teal-500': string
+  'color-pink-500': string
+  'color-purple-500': string
+  'color-yellow-500': string
 }
 
 const Color: UIColor = {
@@ -84,15 +84,15 @@ const Color: UIColor = {
   'color-primary-800': '#1B197A',
   'color-primary-900': '#100F65',
 
-  'color-success-100': '#ECFCE1',
-  'color-success-200': '#D5FAC4',
-  'color-success-300': '#B6F1A3',
-  'color-success-400': '#96E388',
-  'color-success-500': '#69D161',
-  'color-success-600': '#46B348',
-  'color-success-700': '#30963A',
-  'color-success-800': '#1E792E',
-  'color-success-900': '#126427',
+  'color-success-100': '#dcfce7',
+  'color-success-200': '#bbf7d0',
+  'color-success-300': '#86efac',
+  'color-success-400': '#4ade80',
+  'color-success-500': '#22c55e',
+  'color-success-600': '#16a34a',
+  'color-success-700': '#15803d',
+  'color-success-800': '#166534',
+  'color-success-900': '#14532d',
 
   'color-info-100': '#D5E8FF',
   'color-info-200': '#ACD0FF',
@@ -145,46 +145,144 @@ const Color: UIColor = {
   'color-pink-500': '#ED64A6',
   'color-purple-500': '#9F7AEA',
   'color-yellow-500': '#ECC94B',
-};
+}
 
 const AppTheme = extendTheme({
+  colors: {
+    primary: {
+      50: Color['color-primary-100'],
+      100: Color['color-primary-100'],
+      200: Color['color-primary-200'],
+      300: Color['color-primary-300'],
+      400: Color['color-primary-400'],
+      500: Color['color-primary-500'],
+      600: Color['color-primary-600'],
+      700: Color['color-primary-700'],
+      800: Color['color-primary-800'],
+      900: Color['color-primary-900'],
+    },
+    muted: {
+      50: Color['color-basic-100'],
+      100: Color['color-basic-100'],
+      200: Color['color-basic-200'],
+      300: Color['color-basic-300'],
+      400: Color['color-basic-400'],
+      500: Color['color-basic-500'],
+      600: Color['color-basic-600'],
+      700: Color['color-basic-700'],
+      800: Color['color-basic-800'],
+      900: Color['color-basic-900'],
+    },
+    light: {
+      50: Color['color-basic-100'],
+      100: Color['color-basic-100'],
+      200: Color['color-basic-200'],
+      300: Color['color-basic-300'],
+      400: Color['color-basic-400'],
+      500: Color['color-basic-500'],
+      600: Color['color-basic-600'],
+      700: Color['color-basic-700'],
+      800: Color['color-basic-800'],
+      900: Color['color-basic-900'],
+    },
+    success: {
+      50: Color['color-success-100'],
+      100: Color['color-success-100'],
+      200: Color['color-success-200'],
+      300: Color['color-success-300'],
+      400: Color['color-success-400'],
+      500: Color['color-success-500'],
+      600: Color['color-success-600'],
+      700: Color['color-success-700'],
+      800: Color['color-success-800'],
+      900: Color['color-success-900'],
+    },
+    danger: {
+      50: Color['color-danger-100'],
+      100: Color['color-danger-100'],
+      200: Color['color-danger-200'],
+      300: Color['color-danger-300'],
+      400: Color['color-danger-400'],
+      500: Color['color-danger-500'],
+      600: Color['color-danger-600'],
+      700: Color['color-danger-700'],
+      800: Color['color-danger-800'],
+      900: Color['color-danger-900'],
+    },
+    error: {
+      50: Color['color-danger-100'],
+      100: Color['color-danger-100'],
+      200: Color['color-danger-200'],
+      300: Color['color-danger-300'],
+      400: Color['color-danger-400'],
+      500: Color['color-danger-500'],
+      600: Color['color-danger-600'],
+      700: Color['color-danger-700'],
+      800: Color['color-danger-800'],
+      900: Color['color-danger-900'],
+    },
+    warning: {
+      50: Color['color-warning-100'],
+      100: Color['color-warning-100'],
+      200: Color['color-warning-200'],
+      300: Color['color-warning-300'],
+      400: Color['color-warning-400'],
+      500: Color['color-warning-500'],
+      600: Color['color-warning-600'],
+      700: Color['color-warning-700'],
+      800: Color['color-warning-800'],
+      900: Color['color-warning-900'],
+    },
+    info: {
+      50: Color['color-info-100'],
+      100: Color['color-info-100'],
+      200: Color['color-info-200'],
+      300: Color['color-info-300'],
+      400: Color['color-info-400'],
+      500: Color['color-info-500'],
+      600: Color['color-info-600'],
+      700: Color['color-info-700'],
+      800: Color['color-info-800'],
+      900: Color['color-info-900'],
+    },
+  },
   components: {
     Text: {
       variants: {
         h1: {
           color: Color['color-basic-900'],
           fontWeight: 700,
-          fontSize: '4xl',
+          fontSize: '3xl',
           lineHeight: '1.5rem',
         },
         h2: {
           color: Color['color-basic-900'],
           fontWeight: 700,
-          fontSize: '3xl',
+          fontSize: '2xl',
           lineHeight: '1.5rem',
         },
         h3: {
           color: Color['color-basic-900'],
           fontWeight: 700,
-          fontSize: '2xl',
+          fontSize: 'xl',
           lineHeight: '1.5rem',
         },
         h4: {
           color: Color['color-basic-900'],
           fontWeight: 700,
-          fontSize: 'xl',
+          fontSize: 'lg',
           lineHeight: '1.5rem',
         },
         h5: {
           color: Color['color-basic-900'],
           fontWeight: 700,
-          fontSize: 'lg',
+          fontSize: 'md',
           lineHeight: '1.5rem',
         },
         h6: {
           color: Color['color-basic-900'],
           fontWeight: 700,
-          fontSize: 'md',
+          fontSize: 'sm',
           lineHeight: '1.5rem',
         },
         subtitle1: {
@@ -220,7 +318,7 @@ const AppTheme = extendTheme({
       },
     },
   },
-});
+})
 
-export {AppTheme, Color};
-export type {UIColor};
+export { AppTheme, Color }
+export type { UIColor }

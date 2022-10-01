@@ -78,7 +78,7 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
             <Box width={'100%'} display={'flex'} flexDir={'row'} alignItems={'center'} justifyContent={'flex-start'}>
               <Alert.Icon size={5} />
               <Box mr={2} />
-              <Typography style={{ display: 'flex', flex: 1 }} fontSize="md" fontWeight="medium" color="coolGray.800">
+              <Typography style={{ display: 'flex', flex: 1 }} variant="h5">
                 {snackTitle}
               </Typography>
               <Box mr={2} />
@@ -95,31 +95,12 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
             </Box>
             {snackSubtitle && (
               <Box width={'100%'} display={'flex'} flexDir={'row'} pl={6} pr={1.5}>
-                <Typography style={{ color: Color['color-basic-700'] }}>{snackSubtitle}</Typography>
+                <Typography variant={'caption'} style={{ color: Color['color-basic-700'] }}>
+                  {snackSubtitle}
+                </Typography>
               </Box>
             )}
           </Box>
-          {/* <VStack space={2} flexShrink={1} w="100%">
-              <HStack flexShrink={1} space={2} alignItems="center" justifyContent="space-between">
-                <HStack flexShrink={1} space={2} alignItems="center">
-                  <Alert.Icon />
-                  <Typography fontSize="md" fontWeight="medium" color="coolGray.800">
-                    {snackTitle}
-                  </Typography>
-                </HStack>
-                <IconButton
-                  variant="unstyled"
-                  _focus={{
-                    borderWidth: 0,
-                  }}
-                  icon={<CloseIcon size="3" />}
-                  _icon={{
-                    color: 'coolGray.600',
-                  }}
-                />
-              </HStack>
-
-            </VStack> */}
         </Alert>
       )}
     </GlobalUIContext.Provider>
@@ -129,39 +110,3 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
 const useGlobalUI = () => React.useContext(GlobalUIContext)
 
 export { GlobalUIProvider, useGlobalUI }
-
-// <Center
-// style={{
-//   position: 'absolute',
-//   bottom: 120,
-// }}>
-// <Alert maxW="400" status={snackSeverity} colorScheme={snackSeverity}>
-//   <VStack space={2} flexShrink={1} w="100%">
-//     <HStack flexShrink={1} space={2} alignItems="center" justifyContent="space-between">
-//       <HStack flexShrink={1} space={2} alignItems="center">
-//         <Alert.Icon />
-//         <Typography fontSize="md" fontWeight="medium" color="coolGray.800">
-//           {snackTitle}
-//         </Typography>
-//       </HStack>
-//       <IconButton
-//         variant="unstyled"
-//         _focus={{
-//           borderWidth: 0,
-//         }}
-//         icon={<CloseIcon size="3" />}
-//         _icon={{
-//           color: 'coolGray.600',
-//         }}
-//       />
-//     </HStack>
-//     {/* <Box
-//       pl="1"
-//       _text={{
-//         color: 'coolGray.600',
-//       }}>
-//       We are happy to announce that we are going live on July 28th. Get ready!
-//     </Box> */}
-//   </VStack>
-// </Alert>
-// </Center>
