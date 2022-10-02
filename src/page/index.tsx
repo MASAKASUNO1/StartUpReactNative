@@ -13,7 +13,7 @@ const Index: React.FC<IndexProps> = ({}) => {
       <Typography>axaxax</Typography>
       <Button
         onPress={() => {
-          openSnackBarSuccess('保存に成功しました', 'b')
+          openSnackBarSuccess('保存に成功しました')
         }}>
         あああ
       </Button>

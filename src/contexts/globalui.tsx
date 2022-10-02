@@ -5,10 +5,10 @@ import { Typography } from '../components/common/Typography'
 import { Color } from '../lib/nativebase/theme'
 
 const GlobalUIContext = React.createContext<{
-  openSnackBarSuccess(title: string, subtitle: string): void
-  openSnackBarError(title: string, subtitle: string): void
-  openSnackBarInfo(title: string, subtitle: string): void
-  openSnackBarWarning(title: string, subtitle: string): void
+  openSnackBarSuccess(title: string, subtitle?: string): void
+  openSnackBarError(title: string, subtitle?: string): void
+  openSnackBarInfo(title: string, subtitle?: string): void
+  openSnackBarWarning(title: string, subtitle?: string): void
   closeSnackBar(): void
 }>({
   openSnackBarSuccess: () => {},
@@ -54,28 +54,28 @@ const GlobalUIProvider: React.FC<GlobalUIProviderProps> = ({ children }) => {
     }
   }, [isOpenSnackbar])
 
-  const openSnackBarSuccess = (title: string, subtitle: string) => {
+  const openSnackBarSuccess = (title: string, subtitle?: string) => {
     setSnackTitle(title)
     setSnackSubtitle(subtitle)
     setSnackSeverity('success')
     setIsOpenSnackbar(true)
   }
 
-  const openSnackBarInfo = (title: string, subtitle: string) => {
+  const openSnackBarInfo = (title: string, subtitle?: string) => {
     setSnackTitle(title)
     setSnackSubtitle(subtitle)
     setSnackSeverity('info')
     setIsOpenSnackbar(true)
   }
 
-  const openSnackBarError = (title: string, subtitle: string) => {
+  const openSnackBarError = (title: string, subtitle?: string) => {
     setSnackTitle(title)
     setSnackSubtitle(subtitle)
     setSnackSeverity('error')
     setIsOpenSnackbar(true)
   }
 
-  const openSnackBarWarning = (title: string, subtitle: string) => {
+  const openSnackBarWarning = (title: string, subtitle?: string) => {
     setSnackTitle(title)
     setSnackSubtitle(subtitle)
     setSnackSeverity('warning')
