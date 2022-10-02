@@ -1,7 +1,5 @@
 import { NativeBaseProvider } from 'native-base'
 import React from 'react'
-import { SafeAreaView } from 'react-native'
-import { Typography } from './src/components/common/Typography'
 import { GlobalUIProvider } from './src/contexts/globalui'
 import { AppTheme } from './src/lib/nativebase/theme'
 import { Index } from './src/page'
@@ -9,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Test } from './src/page/test'
+import { BottomTabBar } from './src/components/common/BottomTabBar'
 
 const Stack = createStackNavigator()
 const TabBar = createBottomTabNavigator()
@@ -46,7 +45,7 @@ const App = () => {
 }
 
 const TabNavigator = () => (
-  <TabBar.Navigator screenOptions={{ headerShown: false }}>
+  <TabBar.Navigator screenOptions={{ headerShown: false }} tabBar={props => <BottomTabBar {...props} />}>
     <TabBar.Screen name="Index" component={Index} />
     <TabBar.Screen name="Test" component={Test} />
   </TabBar.Navigator>

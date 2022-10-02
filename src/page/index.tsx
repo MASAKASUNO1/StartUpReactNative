@@ -1,5 +1,6 @@
 import { Box, Button } from 'native-base'
 import React from 'react'
+import { SafeAreaView } from 'react-native'
 import { Typography } from '../components/common/Typography'
 import { useGlobalUI } from '../contexts/globalui'
 
@@ -9,7 +10,7 @@ const Index: React.FC<IndexProps> = ({}) => {
   const { openSnackBarSuccess, openSnackBarError } = useGlobalUI()
 
   return (
-    <Box>
+    <SafeAreaView>
       <Typography>axaxax</Typography>
       <Button
         onPress={() => {
@@ -17,7 +18,7 @@ const Index: React.FC<IndexProps> = ({}) => {
         }}>
         あああ
       </Button>
-    </Box>
+    </SafeAreaView>
   )
 }
 
